@@ -16,16 +16,16 @@ def wordFrequencyCalculator(file_path):
             else:
                 word_count_dict[word] += 1
 
-    return word_count_dict
+    sorted_dict_list = [(k, v) for k, v in sorted(word_count_dict.items(), key=lambda item: item[1], reverse=True)]
+    file = open("word_frequency.txt","w",encoding="utf8")
+
+    for word_count in sorted_dict_list:
+        file.write(str(word_count))
+        file.write("\n")
+    file.close()
+
+    return sorted_dict_list
 
 
 if __name__ == "__main__":
-    word_count_dict = wordFrequencyCalculator("word_tokenized_output.txt")
-
-    sorted_dict_list = list()
-
-    sorted_dict_list = [(k,v)for k,v in sorted(word_count_dict.items(),key=lambda item : item[1])]
-
-    print(word_count_dict)
-    for word_count in sorted_dict_list:
-        print(word_count)
+    word_count_dictt = wordFrequencyCalculator("word_tokenized_output.txt")

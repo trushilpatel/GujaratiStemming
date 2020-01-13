@@ -2,16 +2,15 @@ from os import listdir
 from os.path import join
 
 
-def Choice():
+def choice():
     print("*" * 30)
     print("Press 1 : to enter DataSet path \nEles press any number \n")
-    choice = int(input("Enter your choice : "))
 
-    return choice
+    return int(input("Enter your choice : "))
 
 
-def CreateWholeDataSetFile():
-    if Choice() == 1:
+def createWholeDataSetFile():
+    if choice() == 1:
         path = input("Enter the DataSet path : ")
     else:
         path = "train"
@@ -27,6 +26,6 @@ def CreateWholeDataSetFile():
 
 
 if __name__ == "__main__":
-    CreateWholeDataSetFile()
+    createWholeDataSetFile()
     open_whole_dataset_file = open("whole_dataset.txt", "r", encoding="utf8")
     print(len(open_whole_dataset_file.readlines()))
