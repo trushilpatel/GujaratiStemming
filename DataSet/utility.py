@@ -1,5 +1,6 @@
 from sys import getsizeof
 
+
 class SentenceTokenizerHelper:  # DONE
     def sentenceTokenizerHelper(self, sentence_data):
         """
@@ -34,7 +35,7 @@ class WordTokenizerHelper:  # DONE
 
     def __init__(self):
 
-        self.end_special_characters = (",", ".", "?", ")", "!", '"', "'", "]", "}")
+        self.end_special_characters = (",", ".", "?", ")", "!", '"', "'", "]", "}", ";", ":")
         self.start_special_characters = ("'", '"', "(", "[", "{")
 
     def wordTokenizerHelper(self, sentence):
@@ -115,7 +116,7 @@ if __name__ == "__main__":
     print(getsizeof(ans))
     word_tokenized_sentences = t.wordTokenizer(ans)
 
-    word_tokenized_output = open("word_tokenized_output.txt",'w',encoding = "utf8")
+    word_tokenized_output = open("word_tokenized_output.txt", 'w', encoding="utf8")
 
     for tokenized_sentence in word_tokenized_sentences:
         for word in tokenized_sentence:
