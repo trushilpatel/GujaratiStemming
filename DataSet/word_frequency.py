@@ -3,6 +3,12 @@ from os.path import join
 
 
 def wordFrequencyCalculator(file_path):
+    """
+
+    :param file_path: takes complete file path
+    :return: reversed sorted dictionary of word and it's frequency in a given file
+    """
+
     open_file = open(file_path, "r", encoding="utf8")
 
     word_count_dict = {}

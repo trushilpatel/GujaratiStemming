@@ -4,7 +4,7 @@ from os.path import join
 
 def choice():
     print("*" * 30)
-    print("Press 1 : to enter DataSet path \nEles press any number \n")
+    print("Press 1 : to enter DataSet path \nElse press any number \n")
 
     return int(input("Enter your choice : "))
 

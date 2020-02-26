@@ -35,8 +35,8 @@ class WordTokenizerHelper:  # DONE
 
     def __init__(self):
 
-        self.end_special_characters = (",", ".", "?", ")", "!", '"', "'", "]", "}", ";", ":")
-        self.start_special_characters = ("'", '"', "(", "[", "{")
+        self.end_special_characters = (",", ".", "?", ")", "!", '"', "'", "]", "}", ";", ":", "•")
+        self.start_special_characters = ("'", '"', "(", "[", "{", "•")
 
     def wordTokenizerHelper(self, sentence):
         tokenized_words = sentence.split()
