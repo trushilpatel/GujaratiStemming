@@ -34,4 +34,4 @@ def wordFrequencyCalculator(file_path):
 
 
 if __name__ == "__main__":
-    word_count_dictt = wordFrequencyCalculator("word_tokenized_output.txt")
+    word_count_dict = wordFrequencyCalculator("word_tokenized_output.txt")
