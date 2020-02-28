@@ -6,8 +6,8 @@ from sys import getsizeof
 
 
 class Tokenizer:
-
-    def sentenceTokenizer(self, paragraph='', file="", save_as_file=''):  # DONE
+    # DONE
+    def sentenceTokenizer(self, paragraph='', file="", save_as_file=''):
         """
 
         :param paragraph: for paragraph's sentence Tokenizing
@@ -37,17 +37,28 @@ class Tokenizer:
                 file.write("\n")
             file.close()
 
-    def wordTokenizer(self, sentences):  # DONE
+    # DONE
+    def wordTokenizer(self, sentences='', file=''):
 
         """
+         Here only one argument is possible sentences or file if both were given then
+         the sentences will be executed
 
+        :param file: get the sentenceTokenizer's output file
         :param sentences: takes list of sentences a argument
         :return: word tokenized list is returned
 
         ;future : special character remover
 
         """
-
+        if sentences != '':
+            pass
+        elif file != '':
+            sentences = []
+            file = open(file, 'rt', encoding='utf-8')
+            for sentence in file.readlines():
+                sentences.append(sentence)
+            
         wth = WordTokenizerHelper()
         tokenized_words = []
         for sentence in sentences:
@@ -63,14 +74,15 @@ class SentenceTokenizerHelper:  # DONE
         :param sentence_data: paragraph of sentences as a input
         :return: list of tokenized sentences
         """
-        sentence_data = sentence_data.replace("\n", "")
+        # replacing \n in sentences and spliting it with "."
+        sentence_data = sentence_data.replace("\n", ".")
         tokenized_sentence_list = sentence_data.split(".")
 
         # removing extra space from starting and ending
         for i in range(len(tokenized_sentence_list)):
             tokenized_sentence_list[i] = tokenized_sentence_list[i].strip()
 
-        # Here asume last element as a "zyx.\n"
+        # Here assume last element as a "zyx.\n"
         # after removing \n
         # this will be taken as ["zyx.",""]
         # so we must have to remove this "" element which is empty string
@@ -90,8 +102,8 @@ class WordTokenizerHelper:  # DONE
 
     def __init__(self):
 
-        self.end_special_characters = (",", ".", "?", ")", "!", '"', "'", "]", "}", ";", ":", "•")
-        self.start_special_characters = ("'", '"', "(", "[", "{", "•")
+        self.end_special_characters = (",", ",", ".", "?", ")", "!", '"', "'", "]", "}", ";", ":", "•")
+        self.start_special_characters = ("'", '"', "(", "[", "{", "•", "!", "#", "|", "-")
 
     def wordTokenizerHelper(self, sentence):
         tokenized_words = sentence.split()
@@ -101,13 +113,14 @@ class WordTokenizerHelper:  # DONE
             for ssc in self.start_special_characters:
                 if word.startswith(ssc):
                     tokenized_words[tokenized_words.index(word)] = word.replace(ssc, "")
+                    break
 
         # removing ending special characters
         for word in tokenized_words:
             for esc in self.end_special_characters:
                 if word.endswith(esc):
                     tokenized_words[tokenized_words.index(word)] = word.replace(esc, "")
-
+                    break
         return tokenized_words
 
 
@@ -115,18 +128,19 @@ class WordTokenizerHelper:  # DONE
 if __name__ == "__main__":
     t = Tokenizer()
 
-    ans = t.sentenceTokenizer(file="whole_dataset.txt")
+    ans = t.sentenceTokenizer(file="../DataSet/conbined_wikipedia_dataset.txt")
 
-    print(len(ans))
-    print(getsizeof(ans))
+    print("Total Lines :", len(ans))
+    print("Total size in memory held by sentenceTokenizer list :", getsizeof(ans))
+
     word_tokenized_sentences = t.wordTokenizer(ans)
-
-    word_tokenized_output = open("word_tokenized_output.txt", 'w', encoding="utf8")
+    word_tokenized_output = open("../output/wordTokenizedOutput.txt", 'wt', encoding="utf8")
 
     for tokenized_sentence in word_tokenized_sentences:
+        temp = str()
         for word in tokenized_sentence:
-            word_tokenized_output.write(word)
-            word_tokenized_output.write("\t")
-        word_tokenized_output.write("\n")
+            temp += word + ' '
+        temp = temp.strip()
+        word_tokenized_output.write(temp + "." + '\n')
 
     word_tokenized_output.close()
