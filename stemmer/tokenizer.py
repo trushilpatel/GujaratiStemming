@@ -128,13 +128,13 @@ class WordTokenizerHelper:  # DONE
 if __name__ == "__main__":
     t = Tokenizer()
 
-    ans = t.sentenceTokenizer(file="../DataSet/conbined_wikipedia_dataset.txt")
+    ans = t.sentenceTokenizer(file="../corpus/combined_wikipedia_dataset.txt")
 
     print("Total Lines :", len(ans))
     print("Total size in memory held by sentenceTokenizer list :", getsizeof(ans))
 
     word_tokenized_sentences = t.wordTokenizer(ans)
-    word_tokenized_output = open("../output/wordTokenizedOutput.txt", 'wt', encoding="utf8")
+    word_tokenized_output = open("../StemmingOutput/wordTokenizedOutput.txt", 'wt', encoding="utf8")
 
     for tokenized_sentence in word_tokenized_sentences:
         temp = str()
