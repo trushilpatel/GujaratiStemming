@@ -1,9 +1,0 @@
-વિકિપીડિયાના માપદંડ મુજબ ઊચ્ચ કક્ષાનો લેખ બનાવવા માટે આ લેખમાં સુધારો કરવાની જરૂર છે. યોગ્ય સુધારો કરીને આ સંદેશો કાઢી નાંખો. ટાઇપ કરવા અંગે મદદ માટે પાનાંનુ સંપાદન કરવાની રીત તેમજ "કેવી રીતે" શ્રેણીના લેખ જુઓ. 
-એકમએ રાશિના માપ માટે સંખ્યા સાથે વપરાય છે. દા.ત. ૨૦ મીટર લંબાઈ. અહીં મીટર એ લંબાઈ નો એકમ છે.
-વિવિધ રાશિઓના એકમ નીચે બતાવ્યા છે:
-મૂળભૂત રાશિઓ
-મૂળભૂત પરથી તારવેલ રાશિઓ
-The International System of Units consists of a set of units together with a set of prefixes. The units are divided into two classes—base units and derived units. There are seven base units, each representing, by convention, different kinds of physical quantities.
-Derived units are formed from multiplication and division of the seven base units and other derived units and are unlimited in number; for example, the SI derived unit of speed is metre per second, m/s. Some derived units have special names; for example, the unit of resistance, the ohm, symbol Ω, is uniquely defined by the relation Ω = m2·kg·s−3·A−2, which follows from the definition of the quantity electrical resistance. The radian and steradian, once given special status, are now considered dimensionless derived units.
-A prefix may be added to a unit to produce a multiple of the original unit. All multiples are integer powers of ten, and beyond a hundred all are integer powers of a thousand. For example, kilo- denotes a multiple of a thousand and milli- denotes a multiple of a thousandth; hence there are one thousand millimetres to the metre and one thousand metres to the kilometre. The prefixes are never combined, and multiples of the kilogram are named as if the gram was the base unit. Thus a millionth of a metre is a micrometre, not a millimillimetre, and a millionth of a kilogram is a milligram, not a microkilogram.
-In addition to the SI units, there is also a set of non-SI units accepted for use with SI, which includes some commonly used non-coherent units such as the litre.
