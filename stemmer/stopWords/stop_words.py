@@ -2,7 +2,7 @@ class StopWords:
 
     def __init__(self):
         # creating the stop words list
-        file = open('sortedStopWord.txt', 'rt', encoding='utf-8')
+        file = open('stopWords.txt', 'rt', encoding='utf-8')
         self.stop_words_list = []
         for i in file.readlines():
             self.stop_words_list.append(i.strip())
@@ -63,7 +63,11 @@ class StopWords:
 
 if __name__ == '__main__':
     s = StopWords()
+    s.sw_file_reformation('stopWords.txt')
+"""
     print(s.sw_remove([['આ', 'બેઠક', 'નીચે', 'જણાવેલ', 'વિભાગોનું', 'પ્રતિનિધિત્વ', 'કરે', 'છે'],
                        ['ગાંધીનગર', 'દક્ષિણ', 'એ', 'પશ્ચિમ', 'ભારતમાં', 'સ્થિત', 'ગુજરાત', 'રાજ્યની', '૧૮૨',
                         'વિધાનસભા', 'બેઠકોમાંની', 'એક', 'છે']
                        ]))
+"""
+

@@ -1,0 +1,14 @@
+Languages: ઢાંચો:List of Wikipedias/Languages
+ઢાંચો:Project listsThis page contains a list of the official Wikipedias under the auspices of the Wikimedia Foundation for various languages. Test Wikipedias are listed at the Wikimedia Incubator Wiki project.
+All 276 Wikipedias are ordered by article count. The table lists each language name in English and the "local" name, in the language itself . It also lists for each wiki the language code used in its URL and in interwiki links to it, as well as statistics on articles, edits, administrators, users, active users, and images .
+Note: Just adding a link below does not suddenly spring a wiki into existence. For information on starting a Wikipedia in a new language, please see Meta:Language proposal policy. If a wiki becomes active and is not listed here, please post a notice on this article's talk page, including a link to all the relevant Wikipedia pages, and help promote the effort by announcing it on the Wikipedia-L mailing list, and at Wikimedia News.
+The information in the main article count table, below, is regularly completely overwritten by editors, so edits to individual entries won't last long, and are therefore usually unnecessary. If something is wrong with an entry other than simply having slightly out of date statistics, post about it on the talk page.
+See also:
+The languages listed below are Wikipedias which have been created . These tables can also be kept up to date by ordinary users. If you feel that an update is needed, simply cut and paste the wiki syntax from this page into this page, overwriting the existing tables.
+ See Table here.
+Redirect:
+Deprecated:
+Read-only :
+Emptied and locked :
+Moved and deleted:
+Never been an official Wikipedia:

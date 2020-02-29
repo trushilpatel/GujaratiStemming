@@ -49,7 +49,7 @@ def uniqueWords(file_path):
     open_file.close()
 
     # save the unique words in file
-    file = open('../output/unique_words.txt', 'wt', encoding='utf-8')
+    file = open('../StemmingOutput/unique_words.txt', 'wt', encoding='utf-8')
 
     for word in unique_words:
         file.write(word + '\n')
@@ -60,4 +60,4 @@ def uniqueWords(file_path):
 
 if __name__ == "__main__":
     # word_count_dicts = wordFrequencyCalculator("wordTokenizedOutput.txt")
-    uniqueWords('../output/wordTokenizedOutput.txt')
+    uniqueWords('../StemmingOutput/wordTokenizedOutput.txt')

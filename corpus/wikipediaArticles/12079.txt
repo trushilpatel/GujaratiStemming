@@ -1,0 +1,17 @@
+
+સિમ્બાયોસિસ ઇન્સ્ટિટ્યૂટ ઓફ કમ્પ્યૂટર એન્ડ રિસર્ચ એ ભારતના પુના શહેરમાં આવેલી એક શૈક્ષણિક સંસ્થા છે. જે સ્નાતક અને અનુસ્નાતક પદવી કમ્પ્યૂટર એન્ડ ઇન્ફર્મેશન ટેક્નોલોજીમાં પુરી પાડે છે અને તે સિમ્બાયોસિસ પરિવારનો એક ભાગ છે. તેની સ્થાપના ૧૯૮૫માં થઇ હતી. ઇ.સ. ૨૦૦૨માં, In 2002,SICSR became a constituent of Symbiosis International University as a deemed university.It also has it's own wiki for students to refer and contribute on a common platform. 
+SICSR offers doctoral, postgraduate and undergraduate programmes:
+SICSR is most populary known for the open-source gathering GNUnify generally held during the second week of February. GNUnify has featured eminent people like Richard Stallman, Brian Behlendorf, David Axmark, Danese Cooper, Robert Adkins, Alolita Sharma, Prof. Tony Wasserman, Prof. Louis Pott, Niyam Bhushan, Sankarshan, Zahira Bohrat and Anant Narayanan.
+SICSR નિર્માણ અન સંશોધન ખાતુ ઍક વિધ્યાર્થી સંચાલિત ગતિવિધિ છે જ્યા વિધ્યાર્થીઓ સ્વયંસેવક ની ભૂમિકા બજાવી SICSR અને બીજી Symbiosis કૉલેજ ના આંતરીક ઉપયોગ માટે સૉફ્ટવેર નુ નિર્માણ, અમલીકરણ અને દૂરસ્ત રાખવાનું કામ કરે છે. SDRC દરેક પ્રકાર ના ઇનફ્રાસ્ટ્રક્ચર ના સંચાલન અને પદોન્નતિ ગતિવિધિઓ ને સંબંધિત બધી મદદ પુરી પાડે છે.
+Unify ઍક SICSR નો વાર્ષિક સાંસ્કૃતીક તેહવાર છે જ્યા કૉલેજ યજમાન ની ભૂમિકા નીભાવી ઘણી events ને વધાવે છે જેમ કે શેરી ના નાટક, રૉક બૅંડ, સૉફ્ટવેર પ્રોગ્રામિંગ, ગાયન, નૃત્ય, અન્ય.
+The SICSR student band Prosody consisting of Sumit Agarwal, Andre Fernandez, Cariappa Prasad, Kirti Pathania, Abhay Sudhakaran and Angad Pathania was the winning band on Mantra at Mood Indigo and the finalists of Campus Rock Idols in 2007. It was also featured as the Artist of the Month in IndianRockMP3.com in February 2009.
+
+This wiki was officially inaugurated on December 13, 2010 at Symbiosis International University by Erik Moeller, Deputy Director, Wikimedia foundation; Danese Cooper, CTO, Wikimedia Foundation; and Alolita Sharma, Engineering Programs Manager, Wikimedia Foundation.
+SICSRWiki is an initiative taken by SICSR students where students from all courses come forward to share their knowledge on this common platform. Students contribute articles on various technical and non-technical topics.Here we also share our day to day experiences in implementing the knowledge that we gain like sharing knowledge about Moodle, HowTo setup Drupal on a MAC etc.
+SICSR has been one of the local pioneers in the Open source movement by taking various initiatives such as introducing PHP, MySQL and Linux Programming in its course syllabi since 2004—which was unheard of in the education scenario in Maharashtra at that time and providing labs equipped with OpenSUSE and Ubuntu.
+Beginning with GNUnify since 2003, SICSR has been put on the FOSS map.Along with Pune Linux User Group, SICSR has been organizing Linux Awareness Program since 2004 for promoting training people in FOSS especially Linux and offers certification from SIU.
+The institute is a popular meeting place for the likes of Pune Linux User Group and IndicThreads. It has also hosted Barcamp Pune and DrupalCamp.
+Prof. Harshad Gune, a permanent faculty in SICSR, is a Board member of the Open Source Initiative.
+Symbiosis Society
+ઢાંચો:Symbiosis Societyઢાંચો:Pune topics
+Coordinates: 18°32′00″N 73°50′01″E / 18.533287°N 73.833532°E / 18.533287; 73.833532
