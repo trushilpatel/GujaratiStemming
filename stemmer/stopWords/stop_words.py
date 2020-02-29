@@ -7,37 +7,6 @@ class StopWords:
         for i in file.readlines():
             self.stop_words_list.append(i.strip())
 
-    def sw_file_reformation(self, file_path):
-        # DONE
-        """
-            Checks the file for :-
-                ->  making stop word unique
-                ->  truncates space from words
-                ->  removes the empty lines
-                ->  saves the words in sorted order
-
-        :param file_path: stop words file path
-        :return: replaces the file with reformed file
-
-        """
-        print('Total stop words : \n' + '-' * 18, '\n\tbefore removing the redundancy :', len(self.stop_words_list))
-
-        # removing the redundancy of stop words
-        stopWordsList = set(self.stop_words_list)
-        print('\tafter removing the redundancy :', len(stopWordsList))
-        print('-' * 50, '\n')
-
-        # sorting the stop word list
-        stopWordsList = list(stopWordsList)
-        stopWordsList.sort()
-
-        # writing to file
-        file = open(file_path, 'w', encoding='utf-8')
-        for i in stopWordsList:
-            file.write(i + '\n')
-
-        file.close()
-
     def sw_remove(self, sentence_tokenized_words):
         """
 
@@ -63,11 +32,8 @@ class StopWords:
 
 if __name__ == '__main__':
     s = StopWords()
-    s.sw_file_reformation('stopWords.txt')
-"""
     print(s.sw_remove([['આ', 'બેઠક', 'નીચે', 'જણાવેલ', 'વિભાગોનું', 'પ્રતિનિધિત્વ', 'કરે', 'છે'],
                        ['ગાંધીનગર', 'દક્ષિણ', 'એ', 'પશ્ચિમ', 'ભારતમાં', 'સ્થિત', 'ગુજરાત', 'રાજ્યની', '૧૮૨',
                         'વિધાનસભા', 'બેઠકોમાંની', 'એક', 'છે']
                        ]))
-"""
 
