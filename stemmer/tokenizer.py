@@ -1,9 +1,8 @@
 from sys import getsizeof
-
+from stopWords import stop_words
 """
     tokenize the paragraph/files into sentences and words
 """
-
 
 class Tokenizer:
     # DONE
@@ -106,6 +105,7 @@ class WordTokenizerHelper:  # DONE
         self.start_special_characters = ("'", '"', "(", "[", "{", "•", "!", "#", "|", "-")
 
     def wordTokenizerHelper(self, sentence):
+        # here sentence.split() splits sentence and creates sentence's word list
         tokenized_words = sentence.split()
 
         # removing starting special characters
@@ -128,14 +128,24 @@ class WordTokenizerHelper:  # DONE
 if __name__ == "__main__":
     t = Tokenizer()
 
-    ans = t.sentenceTokenizer(file="../corpus/combined_wikipedia_dataset.txt")
+    ans = t.sentenceTokenizer(file="../../GujaratiWord2Vec/pure_Gujarati/pure_gujarati_corpus/Transformed/"
+                                   "combined_dataset.txt")
 
     print("Total Lines :", len(ans))
     print("Total size in memory held by sentenceTokenizer list :", getsizeof(ans))
 
     word_tokenized_sentences = t.wordTokenizer(ans)
     word_tokenized_output = open("../StemmingOutput/wordTokenizedOutput.txt", 'wt', encoding="utf8")
+    sw = stop_words.StopWords()
 
+    file = open("temp.txt",'wt', encoding='utf-8')
+    ans = sw.sw_remove(word_tokenized_sentences)
+
+    for sentence in ans:
+        for words in sentence:
+            file.write(words + ' ')
+        file.write('\n')
+    """
     for tokenized_sentence in word_tokenized_sentences:
         temp = str()
         for word in tokenized_sentence:
@@ -144,3 +154,4 @@ if __name__ == "__main__":
         word_tokenized_output.write(temp + "." + '\n')
 
     word_tokenized_output.close()
+"""
