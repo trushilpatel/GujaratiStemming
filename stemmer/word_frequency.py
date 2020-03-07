@@ -1,18 +1,19 @@
+from tokenizer import Tokenizer
+
+
 def wordFrequencyCalculator(file_path):
     """
 
-    :param file_path: takes complete file path
+    :param file_path: takes complete file path any file ( without tokenized too )
     :return: reversed sorted dictionary of word and it's frequency in a given file
     """
-
-    open_file = open(file_path, "r", encoding="utf8")
-
     word_count_dict = {}
+    tokenize = Tokenizer()
+    tokenized_sentences = tokenize.sentenceTokenizer(file=file_path)
+    tokenized_words = tokenize.wordTokenizer(tokenized_sentences)
 
-    for word_tokenized_sentences in open_file.readlines():
-        words_in_sentences = word_tokenized_sentences.split()
-
-        for word in words_in_sentences:
+    for word_tokenized_sentence in tokenized_words:
+        for word in word_tokenized_sentence:
             if word_count_dict.get(word) is None:
                 word_count_dict[word] = 1
             else:
@@ -29,35 +30,36 @@ def wordFrequencyCalculator(file_path):
     return sorted_dict_list
 
 
-def uniqueWords(file_path):
+def uniqueWords(file_path, want_return_data=False):
     """
 
-    :param file_path: takes complete file path
-    :return: reversed sorted dictionary of word
+    :param want_return_data: if True want data else want to save file
+    :param file_path: takes complete file path ( without or with tokenized sentences file)
+    :return: sorted dictionary of word
     """
-    open_file = open(file_path, "r", encoding="utf8")
+    tokenizer = Tokenizer()
+    tokenized_sentences = tokenizer.sentenceTokenizer(file=file_path)
+    tokenized_words = tokenizer.wordTokenizer(tokenized_sentences)
     unique_words = set()
 
-    for word_tokenized_sentences in open_file.readlines():
-        words_in_sentences = word_tokenized_sentences.split()
-        unique_words.update(words_in_sentences)
+    for word_tokenized_sentence in tokenized_words:
+        unique_words.update(word_tokenized_sentence)
 
     # sorting the words
     unique_words = list(unique_words)
     unique_words.sort()
+    if want_return_data:
+        return unique_words
+    else:
+        # save the unique words in file
+        file = open('../StemmingOutput/unique_words.txt', 'wt', encoding='utf-8')
 
-    open_file.close()
-
-    # save the unique words in file
-    file = open('../StemmingOutput/unique_words.txt', 'wt', encoding='utf-8')
-
-    for word in unique_words:
-        file.write(word + '\n')
-    file.close()
-
-    return unique_words
+        for word in unique_words:
+            file.write(word + '\n')
+        file.close()
 
 
 if __name__ == "__main__":
-    # word_count_dicts = wordFrequencyCalculator("wordTokenizedOutput.txt")
-    uniqueWords('../StemmingOutput/wordTokenizedOutput.txt')
+    # word_count_dicts = wordFrequencyCalculator(
+    # r'D:\MY\GIT\Gujarati-Stemming\StemmingOutput\word_tokenized_output.txt')
+    print((uniqueWords('../StemmingOutput/word_tokenized_output.txt', want_return_data=False)))

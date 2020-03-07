@@ -102,7 +102,7 @@ class WordTokenizerHelper:  # DONE
     def __init__(self):
 
         self.end_special_characters = (",", ",", ".", "?", ")", "!", '"', "'", "]", "}", ";", ":", "•")
-        self.start_special_characters = ("'", '"', "(", "[", "{", "•", "!", "#", "|", "-")
+        self.start_special_characters = ("'", '"', "(", "[", "{", "•", "!", "#", "|", "-", '~', '}')
 
     def wordTokenizerHelper(self, sentence):
         # here sentence.split() splits sentence and creates sentence's word list
