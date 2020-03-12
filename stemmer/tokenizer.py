@@ -138,7 +138,7 @@ if __name__ == "__main__":
     word_tokenized_output = open("../corpus/StemmingOutput/wordTokenizedOutput.txt", 'wt', encoding="utf8")
     sw = stop_words.StopWords()
 
-    file = open("college_data.txt", 'wt', encoding='utf-8')
+    file = open("dataSet/college_data.txt", 'wt', encoding='utf-8')
     ans = sw.sw_remove(word_tokenized_sentences)
 
     for sentence in ans:
