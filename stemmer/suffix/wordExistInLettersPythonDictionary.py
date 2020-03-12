@@ -1,7 +1,7 @@
 from utils import readWriteJsonFile
 
 
-class WordExistInLettersDictionary():
+class WordExistInLettersDictionary:
     def __init__(self):
         self.suffix_list = list(
             map(lambda w: w.strip(), open(r'D:\MY\GIT\Gujarati-Stemming\corpus\helpingFiles\suffix.txt',

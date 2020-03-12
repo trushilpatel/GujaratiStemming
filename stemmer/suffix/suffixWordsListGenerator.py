@@ -60,12 +60,12 @@ def suffix_words_list_generator(data_file, letter_dictionary_json_file):
             if word_description.get('valid_suffix') is not None:
                 csvFile.write(str(word_description.get('valid_suffix')) + ',')
             else:
-                csvFile.write(str(False) + ',')
+                csvFile.write('' + ',')
 
             if word_description.get('suffix') is not None:
                 csvFile.write(word_description.get('suffix') + '\n')
             else:
-                csvFile.write(str(False) + '\n')
+                csvFile.write('' + '\n')
 
             # not_valid_suffix file
             # valid suffix is False then write it down to the not_valid_suffix.txt
