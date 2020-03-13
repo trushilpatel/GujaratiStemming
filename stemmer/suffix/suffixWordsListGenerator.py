@@ -1,5 +1,5 @@
 from word_frequency import uniqueWords
-from wordExistInLettersPythonDictionary import WordExistInLettersDictionary
+from suffixRemovall import SuffixRemoval
 
 
 def suffix_words_list_generator(data_file, letter_dictionary_json_file):
@@ -12,7 +12,7 @@ def suffix_words_list_generator(data_file, letter_dictionary_json_file):
 
     words = uniqueWords(data_file, want_return_data=True)
     print(len(words))
-    word_existence = WordExistInLettersDictionary()
+    word_existence = SuffixRemoval()
 
     max_word_length = 0
     for word in words:
@@ -21,9 +21,9 @@ def suffix_words_list_generator(data_file, letter_dictionary_json_file):
 
     print("max word length :", max_word_length)
 
-    file = open('wordsAndSuffix.txt', 'wt', encoding='utf-8')
-    csvFile = open('wordsAndSuffix.csv', 'wt', encoding='utf-8')
-    notValidSuffix = open('notValidSuffix.txt', 'wt', encoding='utf-8')
+    file = open('../../corpus/output/suffix/wordsAndSuffix.txt', 'wt', encoding='utf-8')
+    csvFile = open('../../corpus/output/suffix/wordsAndSuffix.csv', 'wt', encoding='utf-8')
+    notValidSuffix = open('../../corpus/output/suffix/notValidSuffix.txt', 'wt', encoding='utf-8')
 
     file.write('{:<10}'.format('dictWord') + ' {:<40}'.format('word') +
                ' {:<40}'.format('dictionaryWord') + ' {:<40}'.format('suffix') + '\n')

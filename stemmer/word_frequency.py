@@ -20,7 +20,7 @@ def wordFrequencyCalculator(file_path):
                 word_count_dict[word] += 1
 
     sorted_dict_list = [(k, v) for k, v in sorted(word_count_dict.items(), key=lambda item: item[1], reverse=True)]
-    file = open("suffix_frequency.txt", "w", encoding="utf8")
+    file = open("../corpus/output/suffix/suffix_frequency.txt", "w", encoding="utf8")
 
     for word_count in sorted_dict_list:
         file.write(str(word_count))

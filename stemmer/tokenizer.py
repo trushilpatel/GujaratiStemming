@@ -135,7 +135,7 @@ if __name__ == "__main__":
     print("Total size in memory held by sentenceTokenizer list :", getsizeof(ans))
 
     word_tokenized_sentences = t.wordTokenizer(ans)
-    word_tokenized_output = open("../corpus/StemmingOutput/wordTokenizedOutput.txt", 'wt', encoding="utf8")
+    word_tokenized_output = open("../corpus/output/wordTokenizedOutput.txt", 'wt', encoding="utf8")
     sw = stop_words.StopWords()
 
     file = open("dataSet/college_data.txt", 'wt', encoding='utf-8')
