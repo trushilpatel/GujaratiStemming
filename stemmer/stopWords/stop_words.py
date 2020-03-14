@@ -2,7 +2,7 @@ class StopWords:
 
     def __init__(self):
         # creating the stop words list
-        file = open(r'D:\MY\GIT\Gujarati-Stemming\stemmer\stopWords\stopWords.txt', 'rt', encoding='utf-8')
+        file = open(r'./stopWords.txt', 'rt', encoding='utf-8')
         self.stop_words_list = []
         for i in file.readlines():
             self.stop_words_list.append(i.strip())

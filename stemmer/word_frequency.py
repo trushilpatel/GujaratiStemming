@@ -52,7 +52,7 @@ def uniqueWords(file_path, want_return_data=False):
         return unique_words
     else:
         # save the unique words in file
-        file = open(r'D:\MY\GIT\Gujarati-Stemming\corpus\helpingFiles\suffix.txt', 'wt', encoding='utf-8')
+        file = open(r'..\corpus\helpingFiles\suffix.txt', 'wt', encoding='utf-8')
 
         for word in unique_words:
             file.write(word + '\n')
@@ -61,5 +61,5 @@ def uniqueWords(file_path, want_return_data=False):
 
 if __name__ == "__main__":
     # word_count_dicts = wordFrequencyCalculator(
-      #  r'D:\MY\GIT\Gujarati-Stemming\stemmer\suffix\notValidSuffix.txt')
-    print((uniqueWords(r'D:\MY\GIT\Gujarati-Stemming\corpus\helpingFiles\suffix.txt', want_return_data=False)))
+      #  r'D:\MY\GIT\GujaratiStemming\stemmer\suffix\notValidSuffix.txt')
+    print((uniqueWords(r'/\corpus\helpingFiles\suffix.txt', want_return_data=False)))

@@ -1,8 +1,10 @@
 from sys import getsizeof
 from stopWords import stop_words
+
 """
     tokenize the paragraph/files into sentences and words
 """
+
 
 class Tokenizer:
     # DONE
@@ -57,11 +59,13 @@ class Tokenizer:
             file = open(file, 'rt', encoding='utf-8')
             for sentence in file.readlines():
                 sentences.append(sentence)
-            
+
         wth = WordTokenizerHelper()
         tokenized_words = []
         for sentence in sentences:
-            tokenized_words.append(wth.wordTokenizerHelper(sentence))
+            helper_output = wth.wordTokenizerHelper(sentence)
+            if helper_output != []:
+                tokenized_words.append(helper_output)
 
         return tokenized_words
 
@@ -79,7 +83,10 @@ class SentenceTokenizerHelper:  # DONE
 
         # removing extra space from starting and ending
         for i in range(len(tokenized_sentence_list)):
-            tokenized_sentence_list[i] = tokenized_sentence_list[i].strip()
+            result = tokenized_sentence_list[i].strip()
+            # removing line which is empty line
+            if result != '':
+                tokenized_sentence_list[i] = tokenized_sentence_list[i].strip()
 
         # Here assume last element as a "zyx.\n"
         # after removing \n
@@ -101,7 +108,8 @@ class WordTokenizerHelper:  # DONE
 
     def __init__(self):
 
-        self.end_special_characters = (",", ",", ".", "?", ")", "!", '"', "'", "]", "}", ";", ":", "•")
+        # add features to remove more than one end or start special_characters
+        self.end_special_characters = (",", ".", "?", ")", "!", '"', "'", "]", "}", ";", ":", "•")
         self.start_special_characters = ("'", '"', "(", "[", "{", "•", "!", "#", "|", "-", '~', '}')
 
     def wordTokenizerHelper(self, sentence):
@@ -138,7 +146,7 @@ if __name__ == "__main__":
     word_tokenized_output = open("../corpus/output/wordTokenizedOutput.txt", 'wt', encoding="utf8")
     sw = stop_words.StopWords()
 
-    file = open("dataSet/college_data.txt", 'wt', encoding='utf-8')
+    file = open("../corpus/dataSet/college_data.txt", 'wt', encoding='utf-8')
     ans = sw.sw_remove(word_tokenized_sentences)
 
     for sentence in ans:

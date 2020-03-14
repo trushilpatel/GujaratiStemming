@@ -108,7 +108,6 @@ class SuffixRemoval:
 
         for word_index in range(len(word)):
             if word[word_index:] in self.final_suffix_list:
-                print(word[word_index])
                 return {
                     'is_dictionary_word': False,
                     'word': word[0:word_index],
@@ -126,4 +125,4 @@ class SuffixRemoval:
 
 if __name__ == '__main__':
     word_existence_checking = SuffixRemoval()
-    print("Valid : ", word_existence_checking.checkWordExistence('તિરુપતિમાંનો'))
+    print("Valid : ", word_existence_checking.checkWordExistence('રાજેશ્વરી'))
