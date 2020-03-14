@@ -69,7 +69,7 @@ class ScrappingToolBS:
                 elif link['href'].startswith('/') and parentUrl + link['href'] not in self.allUrls:
                     self.allUrls.append(parentUrl + link['href'][1:])
                 elif not link["href"].startswith('http') and not link['href'].startswith('www') and not link[
-                        'href'].startswith('mailto'):
+                        'href'].startswith('mailto') and link['href'] not in self.allUrls:
                     self.allUrls.append(parentUrl + link['href'])
 
         except:
@@ -78,7 +78,7 @@ class ScrappingToolBS:
 
 
 if __name__ == '__main__':
-    abc = ScrappingToolBS()
+    abc = ScrappingToolBS(withDescriptions=True)
     # Enter Website Name here
     abc.extractWebsiteData()
     print("----Process completed----")
@@ -91,39 +91,39 @@ ________________________________________________________________________________
 
 Scraped websites:-
 ----------------------
-1) https://www.aksharnaad.com/
-2) http://www.readgujarati.com/  remaining 
-3) http://www.matrulipi.com/
-4) https://gujarati.pratilipi.com/
-   https://www.gujaratsamachar.com/
-    don't scrape these websites they are smarter that's why they are using 
-    angular
-5)
+2) http://www.readgujarati.com/
+6) https://kutchuday.in/  saves data in <span> tag
+3) http://www.matrulipi.com/  saves data in <div> tag  dont fetch from this it's a wast of time
+1) https://www.aksharnaad.com/ 
+6) http://www.sanjsamachar.net/
+3) https://www.akilanews.com/  most details are in <strong> tag
+8) https://eaglenews.in/
+22) https://www.gujaratimidday.com/
+20) https://www.aajkaaldaily.com/
+18) http://www.nobat.com/ <span>
+17) http://www.gujarattoday.in/
+15) https://gujarattimesusa.com/ <spam>
+14) https://www.iamgujarat.com/
+
+
+
+
 _______________________________________________________________________________________
 
 Up Next:-
 -----------------------
-1) https://gu.wikipedia.org/
+5) https://gu.wikipedia.org/  smartly do it again it contains lots of information
+4) https://gujarati.pratilipi.com/
+   https://www.gujaratsamachar.com/
+    don't scrape these websites they are smarter that's why they are using 
+    angular
 2) http://sandesh.com/
-3) https://www.akilanews.com/
 4) https://www.navgujaratsamay.com/
 5) http://www.bombaysamachar.com/
-6) http://www.sanjsamachar.net/
-7) https://rakhewaldaily.com/
-8) https://eaglenews.in/
-9) http://www.dhabkar.in/
-10) http://www.aaspassindia.com/
-11) http://www.loksansar.in/
-12) https://gujarati.webdunia.com/
 13) https://gujarati.oneindia.com/
-14) https://www.iamgujarat.com/
-15) https://gujarattimesusa.com/
 16) https://kutchuday.in/
-17) http://www.gujarattoday.in/
-18) http://www.nobat.com/
-19) http://sardargurjari.com/
-20) https://www.aajkaaldaily.com/
-21) https://www.kutchmitradaily.com/
-22) https://www.gujaratimidday.com/
 23) 
+
+
+19) http://sardargurjari.com/   <span>  not scrappable
 """
