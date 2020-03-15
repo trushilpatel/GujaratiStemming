@@ -4,7 +4,7 @@
 import requests
 from bs4 import BeautifulSoup
 import urllib.request
-import bs4
+import os
 import langdetect
 
 
@@ -72,7 +72,9 @@ class ScrappingToolBS:
 
             if paragraphData != '':
                 self.fileCount += 1
-                print("hello")
+                if not os.path.exists('./scrapedDataSet/' + self.directoryName):
+                    os.mkdir('./scrapedDataSet/' + self.directoryName)
+
                 file = open('./scrapedDataSet/' + self.directoryName + '/' + str(self.fileCount) + '.txt',
                             'at', encoding='utf-8')
                 file.write(paragraphData)
