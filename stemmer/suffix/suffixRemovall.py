@@ -10,24 +10,24 @@ from utils import readWriteJsonFile
 class SuffixRemoval:
     def __init__(self):
         self.suffix_list = list(
-            map(lambda w: w.strip(), open(r'../../corpus/helpingFiles/suffix.txt',
+            map(lambda w: w.strip(), open(r'D:\MY\GIT\GujaratiStemming\corpus\helpingFiles\suffix.txt',
                                           'rt', encoding='utf-8').readlines()))
 
         # suffix_list and final_ suffix list are same
         # but final_suffix list is sorted in length max to min
         # in future we have to merge this to list in to single list
         self.final_suffix_list = list(
-            map(lambda w: w.strip(), open(r'../../corpus/helpingFiles/final_suffix.txt',
+            map(lambda w: w.strip(), open(r'D:\MY\GIT\GujaratiStemming\corpus\helpingFiles\final_suffix.txt',
                                           'rt', encoding='utf-8').readlines()))
         self.letter_dict = readWriteJsonFile.readJsonFile(
-            r'../../corpus/helpingFiles/letters_python_dictionary.json')
+            r'D:\MY\GIT\GujaratiStemming\corpus\helpingFiles\letters_python_dictionary.json')
 
     def checkValidSuffix(self, suffix):
         if suffix in self.suffix_list:
             return True
         return False
 
-    def checkWordExistence(self, word):
+    def suffixRemoval(self, word):
         # removing spaces
         word = word.strip()
 
@@ -87,14 +87,12 @@ class SuffixRemoval:
 
             # word is not a dictionary word and doesn't contains valid suffix
             # ex : ભૂ is a not proper dictionary word but ભુજ is
-            print('hello')
             return {
                 'is_dictionary_word': False,
                 'word': word
             }
 
         except:
-            print("hello")
             return self.remove_suffix(word)
 
     def remove_suffix(self, word):
@@ -125,4 +123,4 @@ class SuffixRemoval:
 
 if __name__ == '__main__':
     word_existence_checking = SuffixRemoval()
-    print("Valid : ", word_existence_checking.checkWordExistence('રાજેશ્વરી'))
+    print("Valid : ", word_existence_checking.suffixRemoval('રાજેશ્વરી').get('word'))

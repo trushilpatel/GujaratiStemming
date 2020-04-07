@@ -1,4 +1,4 @@
-def file_reformation( file_path):
+def sortedAndUniqueWords(file_path):
     # DONE
     """
         Checks the file for :-
@@ -8,7 +8,7 @@ def file_reformation( file_path):
             ->  saves the words in sorted order
 
     :param file_path: words file path
-    :return: replaces the file with reformed file
+    :return: sorted and unique words list
 
     """
     file = open(file_path, 'rt', encoding='utf-8')
@@ -31,13 +31,8 @@ def file_reformation( file_path):
     words_list = list(words_list)
     words_list.sort()
 
-    # writing to file
-    file = open(file_path, 'w', encoding='utf-8')
-    for i in words_list:
-        file.write(i + '\n')
-
-    file.close()
+    return words_list
 
 
 if __name__ == "__main__":
-    file_reformation("../../corpus/helpingFiles/prefix-list.txt")
+    sortedAndUniqueWords("../../corpus/helpingFiles/prefix-list.txt")

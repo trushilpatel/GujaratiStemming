@@ -1,4 +1,4 @@
-from word_frequency import uniqueWords
+from word_frequency_calculator import uniqueWords
 from suffixRemovall import SuffixRemoval
 
 
