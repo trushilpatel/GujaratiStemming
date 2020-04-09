@@ -2,7 +2,7 @@ from utils.gujaratiWordChecker import getOnlyGujaratiWord
 
 
 def cleanData(filePath=None, data=None):
-    punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+    punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~‘'''
 
     if filePath is None and data is None:
         return
@@ -23,10 +23,12 @@ def cleanData(filePath=None, data=None):
             gujWord = getOnlyGujaratiWord(word.strip(punctuations))
             if gujWord != '':
                 newSentence += gujWord + ' '
-            sentences[sentence] = newSentence.strip()
+        sentences[sentence] = newSentence.strip()
+
     text = ''
     for sentence in sentences:
-        text += sentence + '.\n'
+        if sentence.strip() != '':
+            text += sentence + '.\n'
 
     if filePath is not None:
         file = open(filePath, 'wt', encoding='utf-8')

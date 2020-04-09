@@ -35,4 +35,5 @@ def sortedAndUniqueWords(file_path):
 
 
 if __name__ == "__main__":
-    sortedAndUniqueWords("../../corpus/helpingFiles/prefix-list.txt")
+    sortedAndUniqueWords(r"D:\MY\GIT\GujaratiStemming\corpus\helpingFiles\engDict.txt")
+
