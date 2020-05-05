@@ -17,11 +17,11 @@ def getPossGujChars(filePath=None):
     characters = list(characters)
     characters.sort()
 
-    print("Total Characters :", len(characters))
-    print("All characters : \n", characters)
+    # print("Total Characters :", len(characters))
+    # print("All characters : \n", characters)
 
     if filePath is not None:
-        file = open("possGujChars.txt", 'wt', encoding='utf-8')
+        file = open(filePath, 'wt', encoding='utf-8')
 
         for i in characters:
             file.write(i + '\n')

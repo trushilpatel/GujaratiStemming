@@ -1,5 +1,5 @@
 from tokenizer import Tokenizer
-from utils import readWriteJsonFile
+import readWriteJsonFile
 
 
 def prepareDictionaryOfWords(gujarati_dictionary_file):
@@ -41,8 +41,8 @@ def createDictionary(tokenized_words):
 
             temp_dict['end'] = True
 
-    readWriteJsonFile.writeJsonFile(letters_dict, file_name='letters_python_dictionary.json')
+    readWriteJsonFile.writeJsonFile(letters_dict, file_name='stopWords_letters_python_dictionary.json')
 
 
 if __name__ == '__main__':
-    prepareDictionaryOfWords('../../corpus/helpingFiles/dictionary.txt')
+    prepareDictionaryOfWords('../../corpus/helpingFiles/stopWords.txt')

@@ -4,23 +4,23 @@
     also reduce the Time Complexity
 """
 
-from utils import readWriteJsonFile
+import readWriteJsonFile
 
 
 class SuffixRemoval:
     def __init__(self):
         self.suffix_list = list(
-            map(lambda w: w.strip(), open(r'D:\MY\GIT\GujaratiStemming\corpus\helpingFiles\suffix.txt',
+            map(lambda w: w.strip(), open(r'E:\GIT\GujaratiStemming\corpus\helpingFiles\suffix.txt',
                                           'rt', encoding='utf-8').readlines()))
 
         # suffix_list and final_ suffix list are same
         # but final_suffix list is sorted in length max to min
         # in future we have to merge this to list in to single list
         self.final_suffix_list = list(
-            map(lambda w: w.strip(), open(r'D:\MY\GIT\GujaratiStemming\corpus\helpingFiles\final_suffix.txt',
+            map(lambda w: w.strip(), open(r'E:\GIT\GujaratiStemming\corpus\helpingFiles\final_suffix.txt',
                                           'rt', encoding='utf-8').readlines()))
         self.letter_dict = readWriteJsonFile.readJsonFile(
-            r'D:\MY\GIT\GujaratiStemming\corpus\helpingFiles\letters_python_dictionary.json')
+            r'E:\GIT\GujaratiStemming\stemmer\suffix\NEW_letters_python_dictionary.json')
 
     def checkValidSuffix(self, suffix):
         if suffix in self.suffix_list:
@@ -45,6 +45,7 @@ class SuffixRemoval:
                     break
                 else:
                     temp_dict = temp_dict.get(word[letter_index])
+
                 if self.checkValidSuffix(word[letter_index + 1:]):
                     # got dictionary word and a valid suffix
                     # ex : ભૂજએ is a not proper dictionary word but ભુજ is which in
@@ -152,4 +153,5 @@ def checkSuffixRemovalAccuracy(filePath):
 if __name__ == '__main__':
     word_existence_checking = SuffixRemoval()
     # print("Valid : ", word_existence_checking.suffixRemoval('રાજેશ્વરી').get('word'))
-    checkSuffixRemovalAccuracy(filePath=r'D:\MY\GIT\GujaratiStemming\stemmer\suffix\testStemmingAccuracy.txt')
+   # checkSuffixRemovalAccuracy(filePath=r'E:\GIT\GujaratiStemming\stemmer\suffix\testStemmingAccuracy.txt')
+    print(word_existence_checking.suffixRemoval('અમેરિકા'))

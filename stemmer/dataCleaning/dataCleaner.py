@@ -1,10 +1,19 @@
 from stemmer.possGujChars.possGujChars import getPossGujChars
 
 
-class CleanFileData:
+class DataCleaner:
     def __init__(self):
-        self.possGujChars = getPossGujChars()
+        self.possGujChars = {char: True for char in getPossGujChars() if char}
         self.punctuations = '''!()-[]\\{};:'",<>./?@#$%^&*_~‘ \n'''
+        # here in punctuation set ':' as per the dataset
+
+    def isGujaratiWord(self, word):
+        for char in word:
+            if self.possGujChars.get(char) is None:
+                break
+        else:
+            return word
+        return ''
 
     def cleanData(self, filePath=None, data=None):
         """
@@ -21,27 +30,41 @@ class CleanFileData:
             return
         elif filePath is not None:
             file = open(filePath, 'rt', encoding='utf-8')
-            text = ''
-            for lines in file.readlines():
-                text += lines
+            text = file.read()
             file.close()
         else:
             text = data
+        print("Total text length :", len(text))
 
-        sentences = text.split('\n')
+        # make change here
+        text = text.replace('\n', ' ')
+        text = text.replace('(', ' ( ')
+        text = text.replace(')', ' ) ')
+        text = text.replace('[', ' [ ')
+        text = text.replace(']', ' ] ')
+        text = text.replace('{', ' { ')
+        text = text.replace('}', ' } ')
 
-        for sentence in range(len(sentences)):
+        # MAKE CHANGE HERE
+        sentences = text.split()
+        del text
+        print("Total sentences :", len(sentences))
+
+        for sentenceIndex in range(len(sentences)):
+            if sentenceIndex % 1000 == 0:
+                print(sentenceIndex)
             newSentence = ''
-            for word in sentences[sentence].split():
-                gujWord = getOnlyGujaratiWord(word.strip(punctuations))
+            for word in sentences[sentenceIndex].split():
+                gujWord = self.isGujaratiWord(word.strip(self.punctuations))
                 if gujWord != '':
                     newSentence += gujWord + ' '
-            sentences[sentence] = newSentence.strip()
+            sentences[sentenceIndex] = newSentence.strip()
 
         text = ''
         for sentence in sentences:
             if sentence.strip() != '':
-                text += sentence + '.\n'
+                # MAKE CHANGE HERE
+                text += sentence + '\n'
 
         if filePath is not None:
             file = open(filePath, 'wt', encoding='utf-8')
@@ -49,3 +72,8 @@ class CleanFileData:
             file.close()
         else:
             return text
+
+
+if __name__ == '__main__':
+    dc = DataCleaner()
+    dc.cleanData(filePath=r"E:\GIT\python-utils\sqlite\GujaratiDictionary\dictionary\9.txt")

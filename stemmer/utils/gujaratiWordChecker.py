@@ -1,5 +1,9 @@
 from langdetect import detect_langs
 
+"""
+    deprecated use PossGujChars's function
+"""
+
 
 def getOnlyGujaratiWord(word):
     try:
