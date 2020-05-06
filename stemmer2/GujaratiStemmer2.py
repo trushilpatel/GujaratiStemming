@@ -11,7 +11,7 @@ from utils import readWriteJsonFile
 class GujaratiStemmer:
     def __init__(self):
         self.guDict = readWriteJsonFile.readJsonFile(
-            r"helpingFiles\new_gu_dict_letters_python_dictionary.json")
+            r"helpingFiles\new_gu_dict_basic_stemming_python_dictionary.json")
         self.suffix = Suffix()
 
     def wordStemmingException(self, word, lastLetterIndex):
@@ -27,13 +27,13 @@ class GujaratiStemmer:
         if wordLen == 0:
             return False
 
+        lastLetterIndex = 0
         try:
             temp_dict = self.guDict.get(word[0])
 
             if temp_dict is None:
                 return False
 
-            lastLetterIndex = 0
             for letter_index in range(1, wordLen):
                 get_letter_dict = temp_dict.get(word[letter_index])
 
@@ -58,34 +58,43 @@ class GujaratiStemmer:
             print("ERROR: IN GUJARATI STEMMER2")
             return self.wordStemmingException(word, lastLetterIndex)
 
-    def guWordsListStemmer(self, listOfWords):
+    def guWordsListStemmer(self, listOfWords, basicStemming=False):
         """
 
-        :param listOfWords: list of wordsd
+        :param basicStemming: bool removes suffix regardless of words meaning
+        :param listOfWords: list of words
                             EX:- [w,a,...]
         :return: it directly updates the list
                  so returns None
         """
-        for wordIndex in range(len(listOfWords)):
-            listOfWords[wordIndex] = self.guWordStemmer(listOfWords[wordIndex])
+        if basicStemming is True:
+            for wordIndex in range(len(listOfWords)):
+                listOfWords[wordIndex] = self.suffix.findSuffixAndRemove(listOfWords[wordIndex])
+        else:
+            for wordIndex in range(len(listOfWords)):
+                listOfWords[wordIndex] = self.guWordStemmer(listOfWords[wordIndex])
 
-    def guTokenizedWordStemmer(self, tokenizedWords):
+    def guTokenizedWordStemmer(self, tokenizedWords, basicStemming=False):
         """
 
+        :param basicStemming: bool removes suffix regardless of words meaning
         :param tokenizedWords: list
                                EX:- [[..],[..],..]
         :return: it directly updates the list
                  so returns None
         """
         for wordsListIndex in range(len(tokenizedWords)):
-            self.guWordsListStemmer(tokenizedWords[wordsListIndex])
+            self.guWordsListStemmer(tokenizedWords[wordsListIndex], basicStemming=basicStemming)
 
-    def guStemmer(self, filePath=None, text=None, cleanData=False, saveFileDir=None, saveFileName=None):
+    def guStemmer(self, filePath=None, text=None, cleanData=False, basicStemming=False, saveFileDir=None,
+                  saveFileName=None):
         """
 
         :param filePath: [OPTIONAL] file's location
         :param cleanData: [OPTIONAL] data needed to be cleaned or not
         :param text: [OPTIONAL] text dataset
+        :param basicStemming: [OPTIONAL] helpful when want to remove suffix from words
+                              regardless of meaning of word
         :return: stemmed text
 
         FOR MEMORY SAVING FOLLOWING COULD BE HELPFUL [ YET TO ADD, IT's A NOTION]
@@ -118,7 +127,7 @@ class GujaratiStemmer:
         sw.removeStopWordsFromTokenizedWords(tokenizedWords=worTok)
 
         # stemming whole tokenized words list
-        self.guTokenizedWordStemmer(tokenizedWords=worTok)
+        self.guTokenizedWordStemmer(tokenizedWords=worTok, basicStemming=basicStemming)
 
         return worTok
 
@@ -132,7 +141,6 @@ if __name__ == "__main__":
     પ્રત્યેક મંત્રનો પ્રારંભ એકાક્ષર ઉદ્ગીથ અનંત શાશ્વતતા અમરતા શિવોહમ્ ઑં મંત્ર પ્રણવમંત્ર પ્રણવો પરિષદ પ્રણવોપાસનાનિ.
     અહં બ્રહ્માસ્મિ અનલ હક્ક ઓમકાર જાગ્રત્ આત્માઓ સ્વપ્નશીલ આત્માઓ સુષુપ્ત અને અસ્વપ્નશીલ આત્માઓ.
     ઑંકાર લીંગ ઑંકારનાથ.
+    કોરિયાને પ્રદેશના.
     """
-
-    print(gs.guStemmer(text=t, cleanData=True))
-
+    print(gs.guStemmer(text=t))
